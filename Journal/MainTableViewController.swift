@@ -12,11 +12,13 @@ class MainTableViewController: UITableViewController {
 
     let journalManager = JournalManager()
     
+    var journals: [Journal] = []
+    
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
         
-        print(journalManager.fetchJournals())
+        journals = journalManager.fetchJournals()
         
     }
     
@@ -40,14 +42,18 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return journals.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! MainTableViewCell
 
-        // Configure the cell...
+        let indexOfRow = indexPath.row
+        
+        cell.mainImageView.image = UIImage(data: journals[indexOfRow].image as! Data)
+        
+        cell.titleLabel.text = journals[indexOfRow].title
 
         return cell
     }
