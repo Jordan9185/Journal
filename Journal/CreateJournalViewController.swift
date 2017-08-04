@@ -117,6 +117,8 @@ class CreateJournalViewController: UIViewController {
         
         saveButton.layer.shadowOpacity = 1
         
+        saveButton.layer.shadowOffset = CGSize.zero
+        
         saveButton.titleLabel?.font = UIFont(name: ".SFUIText-Regular", size: 20)
         
     }
