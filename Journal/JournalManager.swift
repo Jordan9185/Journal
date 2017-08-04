@@ -83,7 +83,7 @@ class JournalManager {
             
         }
         
-        if let imageData = imageData as? NSData {
+        if let imageData = imageData as NSData? {
             
             journals[indexPath].image = imageData
             

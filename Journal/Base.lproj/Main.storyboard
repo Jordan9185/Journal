@@ -93,6 +93,7 @@
                                 <connections>
                                     <outlet property="mainImageView" destination="o9T-EP-gNR" id="chs-bH-bLY"/>
                                     <outlet property="titleLabel" destination="rbg-MN-eU1" id="qcg-kV-5vX"/>
+                                    <segue destination="D4w-pO-Zad" kind="presentation" identifier="ReadingMode" id="Q0d-L4-tNI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -245,4 +246,7 @@
         <image name="icon_photo" width="44" height="44"/>
         <image name="icon_plus" width="44" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Q0d-L4-tNI"/>
+    </inferredMetricsTieBreakers>
 </document>

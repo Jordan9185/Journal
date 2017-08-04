@@ -26,6 +26,12 @@ class CreateJournalViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
     
+    var currentJournal:Journal?
+    
+    var currentIndex:Int?
+    
+    var isReadingMode:Bool = false
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -33,6 +39,12 @@ class CreateJournalViewController: UIViewController {
         setloaderImageViewConfig()
         
         setTextFieldConfig()
+        
+        if isReadingMode {
+            
+            setReadingModeConfig()
+            
+        }
         
     }
 
@@ -51,6 +63,28 @@ class CreateJournalViewController: UIViewController {
         titleTextField.delegate = self
         
         contentTextField.delegate = self
+        
+    }
+    
+    func setReadingModeConfig() {
+        
+        guard let data = currentJournal?.image as Data? else {
+            
+            print("Convert Image to Data fail.")
+            
+            return
+            
+        }
+        
+        let image = UIImage(data: data)
+        
+        loaderImageView.image = image
+        
+        loaderImageView.contentMode = .scaleAspectFill
+        
+        titleTextField.text = currentJournal?.title
+        
+        contentTextField.text = currentJournal?.content
         
     }
     
@@ -82,7 +116,24 @@ class CreateJournalViewController: UIViewController {
             
         }
         
-        journalManager.addJournal(title: title, imageData: imageData, content: content)
+        if isReadingMode {
+            
+            journalManager.updateProduct(
+                indexPath: currentIndex!,
+                title: title,
+                imageData: imageData,
+                content: content
+            )
+            
+        } else {
+            
+            journalManager.addJournal(
+                title: title,
+                imageData: imageData,
+                content: content
+            )
+            
+        }
         
         dismiss(animated: true, completion: nil)
     
