@@ -12,6 +12,8 @@ class MainTableViewCell: UITableViewCell {
 
     @IBOutlet var mainImageView: UIImageView!
     
+    @IBOutlet var grayView: UIView!
+    
     @IBOutlet var titleLabel: UILabel!
     
     @IBOutlet var circleView: UIView!
@@ -36,16 +38,18 @@ class MainTableViewCell: UITableViewCell {
     
     func setMainImageViewConfig() {
         
-        mainImageView.layer.shadowOpacity = 1
-        
-        mainImageView.layer.shadowColor = coolGreyColor.cgColor
-        
-        mainImageView.layer.shadowRadius = 10
-        
-        mainImageView.layer.shadowOffset = CGSize.zero
-        
         mainImageView.layer.cornerRadius = 8
         
+        grayView.layer.cornerRadius = 8
+        
+        grayView.layer.shadowOffset = CGSize.zero
+        
+        grayView.layer.shadowRadius = 8
+        
+        grayView.layer.shadowOpacity = 1
+        
+        grayView.layer.shadowColor = UIColor.black.cgColor
+            //coolGreyColor.cgColor
         
     }
     
