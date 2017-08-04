@@ -49,7 +49,6 @@ class MainTableViewCell: UITableViewCell {
         grayView.layer.shadowOpacity = 1
         
         grayView.layer.shadowColor = UIColor.black.cgColor
-            //coolGreyColor.cgColor
         
     }
     
