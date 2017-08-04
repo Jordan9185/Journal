@@ -37,7 +37,7 @@
                                             <color key="tintColor" red="0.92941176469999998" green="0.37647058820000001" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" image="icon_plus"/>
                                             <connections>
-                                                <segue destination="D4w-pO-Zad" kind="show" id="JyM-RO-w9x"/>
+                                                <segue destination="D4w-pO-Zad" kind="presentation" id="JyM-RO-w9x"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -173,6 +173,9 @@
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="saveJournalActionTapped:" destination="D4w-pO-Zad" eventType="touchUpInside" id="gIw-9Z-Inf"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -186,9 +189,18 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1k2-xY-3aH">
+                                <rect key="frame" x="20" y="29" width="44" height="44"/>
+                                <state key="normal" image="button_close"/>
+                                <connections>
+                                    <action selector="cancelCreateEvent:" destination="D4w-pO-Zad" eventType="touchUpInside" id="rYw-y7-QFs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1k2-xY-3aH" firstAttribute="top" secondItem="G0p-Gx-4ge" secondAttribute="topMargin" constant="29" id="6iN-FT-Mem"/>
+                            <constraint firstItem="1k2-xY-3aH" firstAttribute="leading" secondItem="G0p-Gx-4ge" secondAttribute="leading" constant="20" id="9eq-1n-hFF"/>
                             <constraint firstAttribute="trailing" secondItem="wqc-gp-OOo" secondAttribute="trailing" id="Qm3-cC-I12"/>
                             <constraint firstItem="wqc-gp-OOo" firstAttribute="leading" secondItem="G0p-Gx-4ge" secondAttribute="leading" id="fO5-0B-Tbg"/>
                             <constraint firstItem="wqc-gp-OOo" firstAttribute="top" secondItem="HFc-Ph-Xcn" secondAttribute="bottom" constant="-20" id="sHX-xC-Fkn"/>
@@ -196,12 +208,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentTextField" destination="5Yl-dn-41R" id="Ez6-yF-6tM"/>
                         <outlet property="loaderImageView" destination="bZz-9o-dNW" id="EtM-e0-vTM"/>
+                        <outlet property="titleTextField" destination="Tue-Qn-ok8" id="S29-Ub-KqH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdA-FD-kBY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2030" y="23"/>
+            <point key="canvasLocation" x="2029.5999999999999" y="22.938530734632685"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="so4-mt-51V">
@@ -223,6 +237,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button_close" width="44" height="44"/>
         <image name="icon_photo" width="44" height="44"/>
         <image name="icon_plus" width="44" height="44"/>
     </resources>
