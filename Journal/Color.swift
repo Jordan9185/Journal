@@ -17,3 +17,5 @@ let blushColor = UIColor(red: 247/255, green: 174/255, blue: 163/255, alpha: 1)
 let contentTextColor = UIColor(red: 131/255, green: 156/255, blue: 152/255, alpha: 1)
 
 let slateColor = UIColor(red: 67/255, green: 87/255, blue: 97/255, alpha: 1)
+
+let coolGreyColor = UIColor(red: 171/255, green: 179/255, blue: 176/255, alpha: 1)

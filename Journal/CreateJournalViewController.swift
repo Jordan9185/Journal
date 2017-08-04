@@ -139,8 +139,8 @@ class CreateJournalViewController: UIViewController {
             return
             
         }
-        
-        guard let imageData = UIImagePNGRepresentation(image) else {
+
+        guard let imageData = UIImageJPEGRepresentation(image, 0.7) else {
 
             print(CreateJournalError.ImageConvertFail)
             
