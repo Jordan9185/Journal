@@ -22,6 +22,8 @@ class CreateJournalViewController: UIViewController {
     
     @IBOutlet var contentTextField: UITextField!
     
+    @IBOutlet var saveButton: UIButton!
+    
     let journalManager = JournalManager()
     
     let imagePicker = UIImagePickerController()
@@ -40,6 +42,8 @@ class CreateJournalViewController: UIViewController {
         
         setTextFieldConfig()
         
+        setSaveButtonConfig()
+        
         if isReadingMode {
             
             setReadingModeConfig()
@@ -51,6 +55,20 @@ class CreateJournalViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         
         return .lightContent
+        
+    }
+    
+    func setSaveButtonConfig() {
+        
+        saveButton.backgroundColor = dustyOrangeColor
+        
+        saveButton.layer.cornerRadius = 22
+        
+        saveButton.layer.shadowColor = blushColor.cgColor
+        
+        saveButton.layer.shadowOpacity = 0.1
+        
+        saveButton.titleLabel?.font = UIFont(name: ".SFUIText-Regular", size: 20)
         
     }
     
@@ -68,7 +86,21 @@ class CreateJournalViewController: UIViewController {
         
         titleTextField.delegate = self
         
+        titleTextField.font = UIFont(name: ".SFUIText-Regular", size: 30)
+        
+        titleTextField.font = titleTextField.font?.withSize(30)
+        
+        titleTextField.textColor = slateColor
+        
         contentTextField.delegate = self
+        
+        contentTextField.font = UIFont(name: ".SFUIText-Regular", size: 18)
+        
+        contentTextField.font = contentTextField.font?.withSize(18)
+        
+        contentTextField.textColor = contentTextColor
+        
+        contentTextField.contentVerticalAlignment = .top
         
     }
     
