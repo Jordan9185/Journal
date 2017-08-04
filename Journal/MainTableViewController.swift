@@ -10,6 +10,8 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
+    @IBOutlet var titleLabel: UILabel!
+    
     let journalManager = JournalManager()
     
     var journals: [Journal] = []
@@ -26,8 +28,20 @@ class MainTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
+        setTitleLabelConfig()
+        
     }
 
+    func setTitleLabelConfig() {
+        
+        titleLabel.font = UIFont(name: ".SFUIText-Semibold", size: 20)
+        
+        titleLabel.font.withSize(20)
+        
+        titleLabel.textColor = slateColor
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,6 +67,7 @@ class MainTableViewController: UITableViewController {
         cell.titleLabel.text = journals[indexOfRow].title
 
         cell.tag = indexOfRow
+        
         
         return cell
     }

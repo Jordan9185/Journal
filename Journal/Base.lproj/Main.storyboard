@@ -73,18 +73,27 @@
                                             <rect key="frame" x="20" y="10" width="335" height="140"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbg-MN-eU1">
-                                            <rect key="frame" x="30" y="166" width="315" height="16"/>
+                                            <rect key="frame" x="30" y="166" width="315" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TM3-Mo-HEb">
+                                            <rect key="frame" x="30" y="201" width="315" height="0.5"/>
+                                            <color key="backgroundColor" red="0.6705882352941176" green="0.70196078431372544" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="NdG-l3-yVQ"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="rbg-MN-eU1" secondAttribute="bottom" constant="29.5" id="2TH-HB-y3v"/>
                                         <constraint firstItem="o9T-EP-gNR" firstAttribute="top" secondItem="8k2-lH-Hkj" secondAttribute="topMargin" constant="2" id="8A7-vE-c7m"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="o9T-EP-gNR" secondAttribute="trailing" constant="12" id="8Wv-p2-zez"/>
                                         <constraint firstItem="rbg-MN-eU1" firstAttribute="top" secondItem="8k2-lH-Hkj" secondAttribute="top" constant="166" id="8bk-FE-x45"/>
                                         <constraint firstItem="o9T-EP-gNR" firstAttribute="leading" secondItem="8k2-lH-Hkj" secondAttribute="leadingMargin" constant="12" id="8ix-pt-RnF"/>
+                                        <constraint firstItem="TM3-Mo-HEb" firstAttribute="leading" secondItem="8k2-lH-Hkj" secondAttribute="leading" constant="30" id="ANL-XF-YqW"/>
+                                        <constraint firstAttribute="trailing" secondItem="TM3-Mo-HEb" secondAttribute="trailing" constant="30" id="ONs-WW-4Ij"/>
+                                        <constraint firstAttribute="bottom" secondItem="TM3-Mo-HEb" secondAttribute="bottom" constant="9.8000000000000007" id="YlJ-0F-mad"/>
                                         <constraint firstAttribute="trailing" secondItem="rbg-MN-eU1" secondAttribute="trailing" constant="30" id="gUQ-XC-4Li"/>
                                         <constraint firstItem="rbg-MN-eU1" firstAttribute="leading" secondItem="8k2-lH-Hkj" secondAttribute="leading" constant="30" id="yTN-ym-Pqp"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="o9T-EP-gNR" secondAttribute="bottom" constant="53.5" id="zjw-L9-2Bp"/>
@@ -103,6 +112,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="cXg-JH-2h5"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="rmh-hR-SkZ" id="3hk-OS-wOa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2XT-Ww-xPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

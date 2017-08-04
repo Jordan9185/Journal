@@ -18,12 +18,36 @@ class MainTableViewCell: UITableViewCell {
         
         super.awakeFromNib()
         
+        setMainImageViewConfig()
+        
+        setTitleLabelConfig()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setMainImageViewConfig() {
+        
+        mainImageView.layer.cornerRadius = 8
+        
+        mainImageView.layer.shadowOpacity = 1
+        
+        mainImageView.layer.shadowColor = coolGreyColor.cgColor
+        
+    }
+    
+    func setTitleLabelConfig() {
+        
+        titleLabel.font = UIFont(name: ".SFUIText-Regular", size: 14)
+        
+        titleLabel.font.withSize(14)
+        
+        titleLabel.textColor = slateColor
+        
     }
 
 }
