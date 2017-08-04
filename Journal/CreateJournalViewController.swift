@@ -48,6 +48,12 @@ class CreateJournalViewController: UIViewController {
         
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        
+        return .lightContent
+        
+    }
+    
     func setloaderImageViewConfig() {
         
         loaderImageView.tintColor = .white
