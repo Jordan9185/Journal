@@ -15,6 +15,7 @@
 		984E4AF51F3401DA007766C7 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E4AF41F3401DA007766C7 /* MainTableViewController.swift */; };
 		984E4AF81F34076F007766C7 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E4AF71F34076F007766C7 /* MainTableViewCell.swift */; };
 		989D5AF41F34098900EFAF2B /* JournalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D5AF31F34098900EFAF2B /* JournalManager.swift */; };
+		989D5AF71F340C6000EFAF2B /* CreateJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D5AF61F340C6000EFAF2B /* CreateJournalViewController.swift */; };
 		E04BE8E8C7DEE0673F9C3FBD /* Pods_Journal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BC768BF09E5A70E6C46E9C /* Pods_Journal.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		984E4AF41F3401DA007766C7 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		984E4AF71F34076F007766C7 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		989D5AF31F34098900EFAF2B /* JournalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalManager.swift; sourceTree = "<group>"; };
+		989D5AF61F340C6000EFAF2B /* CreateJournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJournalViewController.swift; sourceTree = "<group>"; };
 		F21EB0E87B3C266203E874F0 /* Pods-Journal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Journal/Pods-Journal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 			children = (
 				989D5AF21F34094900EFAF2B /* Model */,
 				984E4AF61F340750007766C7 /* MainPage */,
+				989D5AF51F340C2C00EFAF2B /* CreateNewJournalPage */,
 				984E4ADF1F340091007766C7 /* AppDelegate.swift */,
 				984E4AE31F340091007766C7 /* Main.storyboard */,
 				984E4AE91F340091007766C7 /* Assets.xcassets */,
@@ -111,6 +114,14 @@
 				989D5AF31F34098900EFAF2B /* JournalManager.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		989D5AF51F340C2C00EFAF2B /* CreateNewJournalPage */ = {
+			isa = PBXGroup;
+			children = (
+				989D5AF61F340C6000EFAF2B /* CreateJournalViewController.swift */,
+			);
+			name = CreateNewJournalPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 				984E4AF51F3401DA007766C7 /* MainTableViewController.swift in Sources */,
 				984E4AE81F340091007766C7 /* Journal.xcdatamodeld in Sources */,
 				984E4AF81F34076F007766C7 /* MainTableViewCell.swift in Sources */,
+				989D5AF71F340C6000EFAF2B /* CreateJournalViewController.swift in Sources */,
 				984E4AE01F340091007766C7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
