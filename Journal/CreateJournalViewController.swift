@@ -24,6 +24,10 @@ class CreateJournalViewController: UIViewController {
     
     @IBOutlet var saveButton: UIButton!
     
+    @IBOutlet var scrollView: UIScrollView!
+    
+    var isKeyboardShowed: Bool = false
+    
     let journalManager = JournalManager()
     
     let imagePicker = UIImagePickerController()
@@ -50,11 +54,58 @@ class CreateJournalViewController: UIViewController {
             
         }
         
+        setKeyboardObserver()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         
         return .lightContent
+        
+    }
+    
+    func setKeyboardObserver() {
+        
+        let center = NotificationCenter.default
+        
+        center.addObserver(self,
+                           selector: #selector(keyboardWillShow),
+                           name: .UIKeyboardWillShow,
+                           object: nil)
+        
+        center.addObserver(self,
+                           selector: #selector(keyboardWillHide),
+                           name: .UIKeyboardWillHide,
+                           object: nil)
+        
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if self.isKeyboardShowed == false {
+            
+            self.isKeyboardShowed = true
+            
+            let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+            
+            let keyboardSize = (userInfo.object(forKey: UIKeyboardFrameBeginUserInfoKey)! as AnyObject).cgRectValue.size
+            
+            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+            
+            scrollView.contentInset = contentInsets
+            
+        }
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        
+        if self.isKeyboardShowed == true {
+            
+            self.isKeyboardShowed = false
+            
+            scrollView.contentInset = UIEdgeInsets.zero
+            
+        }
         
     }
     
@@ -66,7 +117,7 @@ class CreateJournalViewController: UIViewController {
         
         saveButton.layer.shadowColor = blushColor.cgColor
         
-        saveButton.layer.shadowOpacity = 0.1
+        saveButton.layer.shadowOpacity = 1
         
         saveButton.titleLabel?.font = UIFont(name: ".SFUIText-Regular", size: 20)
         
