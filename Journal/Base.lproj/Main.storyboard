@@ -15,7 +15,7 @@
         <scene sceneID="p52-K4-Eag">
             <objects>
                 <tableViewController id="rsv-Bf-swi" customClass="MainTableViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="212" sectionHeaderHeight="28" sectionFooterHeight="28" id="eqo-J1-9u2">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="212" sectionHeaderHeight="28" sectionFooterHeight="28" id="eqo-J1-9u2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,33 +73,44 @@
                                             <rect key="frame" x="20" y="10" width="335" height="140"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbg-MN-eU1">
-                                            <rect key="frame" x="30" y="166" width="315" height="20.5"/>
+                                            <rect key="frame" x="30" y="161" width="315" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TM3-Mo-HEb">
-                                            <rect key="frame" x="30" y="201" width="315" height="0.5"/>
+                                            <rect key="frame" x="30" y="201" width="315" height="1"/>
                                             <color key="backgroundColor" red="0.6705882352941176" green="0.70196078431372544" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="0.5" id="NdG-l3-yVQ"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ur4-6E-b7d">
+                                            <rect key="frame" x="183" y="197" width="8" height="8"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="8" id="8q0-oY-QSx"/>
+                                                <constraint firstAttribute="width" constant="8" id="GwP-qB-8uB"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="o9T-EP-gNR" firstAttribute="top" secondItem="8k2-lH-Hkj" secondAttribute="topMargin" constant="2" id="8A7-vE-c7m"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="o9T-EP-gNR" secondAttribute="trailing" constant="12" id="8Wv-p2-zez"/>
-                                        <constraint firstItem="rbg-MN-eU1" firstAttribute="top" secondItem="8k2-lH-Hkj" secondAttribute="top" constant="166" id="8bk-FE-x45"/>
                                         <constraint firstItem="o9T-EP-gNR" firstAttribute="leading" secondItem="8k2-lH-Hkj" secondAttribute="leadingMargin" constant="12" id="8ix-pt-RnF"/>
                                         <constraint firstItem="TM3-Mo-HEb" firstAttribute="leading" secondItem="8k2-lH-Hkj" secondAttribute="leading" constant="30" id="ANL-XF-YqW"/>
+                                        <constraint firstAttribute="bottom" secondItem="rbg-MN-eU1" secondAttribute="bottom" constant="30" id="HRI-ch-VZn"/>
                                         <constraint firstAttribute="trailing" secondItem="TM3-Mo-HEb" secondAttribute="trailing" constant="30" id="ONs-WW-4Ij"/>
                                         <constraint firstAttribute="bottom" secondItem="TM3-Mo-HEb" secondAttribute="bottom" constant="9.8000000000000007" id="YlJ-0F-mad"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ur4-6E-b7d" secondAttribute="bottom" constant="-1" id="Zqj-8M-OEg"/>
                                         <constraint firstAttribute="trailing" secondItem="rbg-MN-eU1" secondAttribute="trailing" constant="30" id="gUQ-XC-4Li"/>
+                                        <constraint firstItem="Ur4-6E-b7d" firstAttribute="centerX" secondItem="TM3-Mo-HEb" secondAttribute="centerX" id="u3a-sN-OWB"/>
                                         <constraint firstItem="rbg-MN-eU1" firstAttribute="leading" secondItem="8k2-lH-Hkj" secondAttribute="leading" constant="30" id="yTN-ym-Pqp"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="o9T-EP-gNR" secondAttribute="bottom" constant="53.5" id="zjw-L9-2Bp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="circleView" destination="Ur4-6E-b7d" id="a80-ht-X14"/>
                                     <outlet property="mainImageView" destination="o9T-EP-gNR" id="chs-bH-bLY"/>
                                     <outlet property="titleLabel" destination="rbg-MN-eU1" id="qcg-kV-5vX"/>
                                     <segue destination="D4w-pO-Zad" kind="presentation" identifier="ReadingMode" id="Q0d-L4-tNI"/>
@@ -158,14 +169,14 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7o-Ed-aZA">
-                                                        <rect key="frame" x="0.0" y="46" width="331" height="0.5"/>
+                                                        <rect key="frame" x="0.0" y="46" width="331" height="1"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="0.5" id="4TC-rp-1bj"/>
                                                         </constraints>
                                                     </view>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES" placeholder="Content" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Yl-dn-41R">
-                                                        <rect key="frame" x="0.0" y="56.5" width="331" height="161.5"/>
+                                                        <rect key="frame" x="0.0" y="57" width="331" height="161"/>
                                                         <attributedString key="attributedText"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>

@@ -14,6 +14,8 @@ class MainTableViewCell: UITableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     
+    @IBOutlet var circleView: UIView!
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -22,6 +24,8 @@ class MainTableViewCell: UITableViewCell {
         
         setTitleLabelConfig()
         
+        setCircleViewConfig()
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,11 +36,16 @@ class MainTableViewCell: UITableViewCell {
     
     func setMainImageViewConfig() {
         
-        mainImageView.layer.cornerRadius = 8
-        
         mainImageView.layer.shadowOpacity = 1
         
         mainImageView.layer.shadowColor = coolGreyColor.cgColor
+        
+        mainImageView.layer.shadowRadius = 10
+        
+        mainImageView.layer.shadowOffset = CGSize.zero
+        
+        mainImageView.layer.cornerRadius = 8
+        
         
     }
     
@@ -50,4 +59,16 @@ class MainTableViewCell: UITableViewCell {
         
     }
 
+    func setCircleViewConfig() {
+        
+        circleView.layer.cornerRadius = 4
+        
+        circleView.layer.borderWidth = 0.5
+        
+        circleView.layer.borderColor = coolGreyColor.cgColor
+        
+        circleView.backgroundColor = .white
+        
+    }
+    
 }
