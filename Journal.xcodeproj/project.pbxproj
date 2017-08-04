@@ -17,6 +17,7 @@
 		989D5AF41F34098900EFAF2B /* JournalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D5AF31F34098900EFAF2B /* JournalManager.swift */; };
 		989D5AF71F340C6000EFAF2B /* CreateJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D5AF61F340C6000EFAF2B /* CreateJournalViewController.swift */; };
 		98BE13D91F3431CC000E9AA2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE13D81F3431CC000E9AA2 /* Color.swift */; };
+		98BE13DB1F345395000E9AA2 /* CreateJournalImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE13DA1F345395000E9AA2 /* CreateJournalImagePickerController.swift */; };
 		E04BE8E8C7DEE0673F9C3FBD /* Pods_Journal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BC768BF09E5A70E6C46E9C /* Pods_Journal.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		989D5AF31F34098900EFAF2B /* JournalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalManager.swift; sourceTree = "<group>"; };
 		989D5AF61F340C6000EFAF2B /* CreateJournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJournalViewController.swift; sourceTree = "<group>"; };
 		98BE13D81F3431CC000E9AA2 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		98BE13DA1F345395000E9AA2 /* CreateJournalImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateJournalImagePickerController.swift; sourceTree = "<group>"; };
 		F21EB0E87B3C266203E874F0 /* Pods-Journal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Journal/Pods-Journal.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				989D5AF61F340C6000EFAF2B /* CreateJournalViewController.swift */,
+				98BE13DA1F345395000E9AA2 /* CreateJournalImagePickerController.swift */,
 			);
 			name = CreateNewJournalPage;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				984E4AE81F340091007766C7 /* Journal.xcdatamodeld in Sources */,
 				984E4AF81F34076F007766C7 /* MainTableViewCell.swift in Sources */,
 				98BE13D91F3431CC000E9AA2 /* Color.swift in Sources */,
+				98BE13DB1F345395000E9AA2 /* CreateJournalImagePickerController.swift in Sources */,
 				989D5AF71F340C6000EFAF2B /* CreateJournalViewController.swift in Sources */,
 				984E4AE01F340091007766C7 /* AppDelegate.swift in Sources */,
 			);
