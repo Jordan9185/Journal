@@ -67,38 +67,31 @@ class JournalManager {
         
     }
     
-//
-//    func searchProduct(productName: String) -> [Product] {
-//        var products: [Product] = []
-//        
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
-//        fetchRequest.predicate = NSPredicate(format: "name contains %@", productName)
-//        
-//        do {
-//
-//            products = try context.fetch(fetchRequest) as! [Product]
-//            
-//        } catch (let error) {
-//            print(error)
-//        }
-//        return products
-//    }
-//    
-//    func updateProduct(indexPath: Int, id:String?, name: String?, price: Double?) {
-//        let products = fetchProducts()
-//        
-//        if let productId = id {
-//            products[indexPath].id = productId
-//        }
-//        if let productName = name {
-//            products[indexPath].name = productName
-//        }
-//        if let productPrice = price {
-//            products[indexPath].price = productPrice
-//        }
-//        
-//        appDelegate.saveContext()
-//    }
+    func updateProduct(indexPath: Int, title: String?, imageData: Data?, content: String?) {
+        
+        let journals = fetchJournals()
+        
+        if let title = title {
+            
+            journals[indexPath].title = title
+            
+        }
+        
+        if let content = content {
+            
+            journals[indexPath].content = content
+            
+        }
+        
+        if let imageData = imageData as? NSData {
+            
+            journals[indexPath].image = imageData
+            
+        }
+        
+        addDelegate.saveContext()
+        
+    }
  
 }
 
