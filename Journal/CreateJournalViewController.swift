@@ -30,6 +30,7 @@ class CreateJournalViewController: UIViewController {
         
         setloaderImageViewConfig()
         
+        setTextFieldConfig()
         
     }
 
@@ -43,13 +44,21 @@ class CreateJournalViewController: UIViewController {
         
     }
     
+    func setTextFieldConfig() {
+        
+        titleTextField.delegate = self
+        
+        contentTextField.delegate = self
+        
+    }
+    
     func pickImageAction() {
         
         print("pickImageAction()")
         
     }
     
-    @IBAction func saveJournalActionTapped(_ sender: UIButton) throws {
+    @IBAction func saveJournalActionTapped(_ sender: UIButton) {
         
         let title = titleTextField.text ?? ""
         
@@ -57,13 +66,17 @@ class CreateJournalViewController: UIViewController {
         
         guard let image = loaderImageView.image else {
             
-            throw CreateJournalError.ImageIsNil
+            print(CreateJournalError.ImageIsNil)
+            
+            return
             
         }
         
         guard let imageData = UIImagePNGRepresentation(image) else {
+
+            print(CreateJournalError.ImageConvertFail)
             
-            throw CreateJournalError.ImageConvertFail
+            return
             
         }
         
@@ -75,7 +88,7 @@ class CreateJournalViewController: UIViewController {
         
         journalManager.addJournal(title: title, imageData: imageData, content: content)
         
-        
+        dismiss(animated: true, completion: nil)
     
     }
     
@@ -97,4 +110,16 @@ class CreateJournalViewController: UIViewController {
         
     }
 
+}
+
+extension CreateJournalViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+        
+    }
+    
 }
