@@ -36,7 +36,17 @@ class JournalManager {
         addDelegate.saveContext()
         
     }
+
+    func deleteJournal(indexPath: Int) {
+        
+        let journals = fetchJournals()
     
+        context.delete(journals[indexPath])
+    
+        addDelegate.saveContext()
+        
+    }
+
     func fetchJournals() -> [Journal] {
         
         var Journals: [Journal] = []
@@ -53,7 +63,8 @@ class JournalManager {
         return Journals
         
     }
-//    
+    
+//
 //    func searchProduct(productName: String) -> [Product] {
 //        var products: [Product] = []
 //        
@@ -61,7 +72,7 @@ class JournalManager {
 //        fetchRequest.predicate = NSPredicate(format: "name contains %@", productName)
 //        
 //        do {
-//            
+//
 //            products = try context.fetch(fetchRequest) as! [Product]
 //            
 //        } catch (let error) {
@@ -85,16 +96,6 @@ class JournalManager {
 //        
 //        appDelegate.saveContext()
 //    }
-//    
-//    func deleteProduct(indexPath: Int) {
-//        let products = fetchProducts()
-//        
-//        context.delete(products[indexPath])
-//        
-//        appDelegate.saveContext()
-//    }
-//    
-
-    
+ 
 }
 
