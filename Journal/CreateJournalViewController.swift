@@ -203,6 +203,8 @@ class CreateJournalViewController: UIViewController {
             
             showWarningforTitleIsEmpty()
             
+            return
+            
         }
         
         if isReadingMode {
