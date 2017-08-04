@@ -27,10 +27,13 @@ class JournalManager {
         let newJournal = Journal(context: context)
         
         newJournal.title = title
+        
         newJournal.image = imageData as NSData
         
         if let content = content {
+            
             newJournal.content = content
+            
         }
         
         addDelegate.saveContext()

@@ -24,6 +24,8 @@ class CreateJournalViewController: UIViewController {
     
     let journalManager = JournalManager()
     
+    let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -49,12 +51,6 @@ class CreateJournalViewController: UIViewController {
         titleTextField.delegate = self
         
         contentTextField.delegate = self
-        
-    }
-    
-    func pickImageAction() {
-        
-        print("pickImageAction()")
         
     }
     
@@ -119,6 +115,38 @@ extension CreateJournalViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
+        
+    }
+    
+}
+
+extension CreateJournalViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func pickImageAction() {
+        
+        self.imagePicker.delegate = self
+        
+        self.imagePicker.sourceType = .photoLibrary
+        
+        self.present(self.imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            self.loaderImageView.image = image
+            
+        } else {
+            
+            print("pick image fail")
+            
+        }
+        
+        self.loaderImageView.contentMode = .scaleAspectFill
+        
+        self.dismiss(animated: true, completion: nil)
         
     }
     
